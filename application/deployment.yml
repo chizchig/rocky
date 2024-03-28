@@ -1,25 +1,25 @@
 apiVersion: apps/v1
-kind: Deployment 
+kind: Deployment
 metadata:
   namespace: ark
   name: rocky-deployment
-  labels: 
+  labels:
     app: roc-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: roc-app 
+      app: roc-app
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
-      maxSurge: 1 
+      maxSurge: 1
   template:
     metadata:
       labels:
         app: roc-app
-    spec: 
+    spec:
       imagePullSecrets:
         - name: dockerhub-credentials
       containers:
@@ -34,3 +34,15 @@ spec:
             requests:
               cpu: 200m
               memory: 228Mi
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8002
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8002
+            periodSeconds: 10
+            failureThreshold: 3
