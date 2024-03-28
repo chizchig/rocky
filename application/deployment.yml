@@ -24,7 +24,7 @@ spec:
         - name: dockerhub-credentials
       containers:
         - name: rocky-container
-          image: shadowhub/swore
+          image: shadowhub/beer_factory_app
           #command: ["/bin/sh", "-c", "gunicorn -b 0.0.0.0:8002 app:app"]
           ports:
             - containerPort: 8002
