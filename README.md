@@ -3,7 +3,7 @@ This is just a practice project aimed at testing KUSTOMIZE tool before introduci
 
 # Parts
 There are two parts in this project;
-                        i. The Base     ---- application
-                        ii. The Overlay ---- environment
+        i. The Base     ---- application
+        ii. The Overlay ---- environment
    
    
