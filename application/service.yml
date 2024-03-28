@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  namespace: ark
+  name: rocky-deployment
+spec:
+  selector:
+    app: roc-app
+  ports:
+  - name: http 
+    port: 8002
+    targetPort: 80

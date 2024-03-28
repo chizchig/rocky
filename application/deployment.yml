@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  namespace: ark
+  name: rocky-deployment
+  labels: 
+    app: roc-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: roc-app 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: roc-app
+    spec: 
+      imagePullSecrets:
+        - name: dockerhub-credentials
+      containers:
+        - name: rocky-container
+          image: shadowhub/toss
+          ports:
+            - containerPort: 8002
+          resources:
+            limits:
+              cpu: 600m
+              memory: 612Mi
+            requests:
+              cpu: 200m
+              memory: 228Mi
