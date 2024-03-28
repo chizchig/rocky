@@ -25,6 +25,7 @@ spec:
       containers:
         - name: rocky-container
           image: shadowhub/toss
+          command: ["/bin/sh", "-c", "gunicorn -b 0.0.0.0:8002 app:app"]
           ports:
             - containerPort: 8002
           resources:
