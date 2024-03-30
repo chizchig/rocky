@@ -25,13 +25,12 @@ spec:
       containers:
         - name: rocky-container
           image: shadowhub/blog:latest
-          #command: ["/bin/sh", "-c", "gunicorn -b 0.0.0.0:8002 app:app"]
           ports:
             - containerPort: 3000
           resources:
             limits:
               cpu: 600m
-              memory: 1Gi
+              memory: 10Gi
             requests:
               cpu: 200m
               memory: 228Mi
