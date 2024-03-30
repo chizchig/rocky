@@ -38,12 +38,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 3000
+              port: 8002
             periodSeconds: 20
             failureThreshold: 3
           readinessProbe:
             httpGet:
               path: /readyz
-              port: 3000
+              port: 8002
             periodSeconds: 20
             failureThreshold: 3
