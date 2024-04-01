@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: arrow
+  namespace: cloud
   name: rocky-deployment
   labels:
     app: roc-app
