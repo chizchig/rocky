@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ../../application
 
+namePrefix: stage
+
 replicas:
   - name: rocky-deployment 
     count: 4
