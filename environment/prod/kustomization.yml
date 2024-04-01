@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../application
 
-namePrefix: prod
+namePrefix: prod-
 
 replicas:
   - name: rocky-deployment 

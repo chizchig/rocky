@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../application
 
-namePrefix: stage
+namePrefix: stage-
 
 replicas:
   - name: rocky-deployment 
