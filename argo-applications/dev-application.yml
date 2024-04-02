@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rocky-application-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/chizchig/rocky.git
+    targetRevision: HEAD
+    path: environment/dev
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: cloudy-dev-namespace
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
