@@ -11,7 +11,7 @@ spec:
     path: environment/stage
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: cloudy-stage-namespace
+    namespace: cloudy
   syncPolicy:
     automated:
       selfHeal: true

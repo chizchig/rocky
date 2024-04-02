@@ -11,7 +11,7 @@ spec:
     path: environment/prod
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: cloudy-prod-namespace
+    namespace: cloudy
   syncPolicy:
     automated:
       selfHeal: true
